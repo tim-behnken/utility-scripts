@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# This script sends a notification to the macOS Notification Center.
+if [ -z "${1}" ]; then
+     echo "Usage: ${0} <message> [title]"
+return
+fi
+
+message="$1"
+title="Script Notification"
+
+if [ -n "${2}" ]; then
+  title="${2}"
+fi
+
+osascript -e "display notification \"$message\" with title \"$title\" sound name \"Submarine\""
+
+
+#vim ft=bash
